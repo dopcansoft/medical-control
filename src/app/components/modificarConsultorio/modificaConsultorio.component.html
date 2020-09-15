@@ -1,0 +1,33 @@
+<div class="col-lg-6">
+    <h1 class="h1-strong">Actualizar Consultorio</h1>
+	<div class="alert alert-success" *ngIf="status == 'success'">
+		Registro de Consultorio completado correctamente, <a [routerLink]="['/consultar_consultorio']">verificar aquí</a>
+	</div>
+
+	<div class="alert alert-danger" *ngIf="status == 'error'">
+		El registro no ha podido completarse, puede ser que la clave de consultorio ya existe intentalo de nuevo con otros datos
+	</div>
+	<form #registerForm="ngForm" (ngSubmit)="onSubmit(registerForm)" class="col-lg-12">
+		<p>
+			<label> clave Consultorio </label>
+			<input type="text" name ="numConsultorio" #nConsultorio="ngModel" [(ngModel)]="_consultorio.numConsultorio" class = "form-control" required />
+			<br>
+			<span *ngIf="!nConsultorio.valid && nConsultorio.touched" class ="alert alert-danger">
+				Clave Consultorio es requerida en Formato (AA-#) ejemplo MG-1
+			</span>
+			<br>
+			<br>
+			<label> Area </label>
+			<input type="text" name ="area" #area="ngModel" [(ngModel)]="_consultorio.area" 
+			class = "form-control" required />
+			<br>
+			<span *ngIf="!area.valid && area.touched" class="alert alert-danger">
+				Area del Consultorio es requerida ejemplo Medicina Genral 
+			</span>
+			<br>
+			<br>
+		</p>
+		<input type="submit" value="Entrar" class="btn btn-success" [disabled]="!registerForm.form.valid" />
+	</form>
+
+</div>

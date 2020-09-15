@@ -1,1 +1,20 @@
 /* You can add global styles to this file, and also import other style files */
+
+/*Generales*/
+
+.h1-strong{
+    color: cadetblue;
+    font-size: 35px;
+    font-weight: bold;
+    margin-left: 13px;
+    margin-bottom: 35px;
+    padding-bottom: 5px;
+    border-bottom: 2px solid #CCC;
+}
+
+.span-alerts{
+    margin-top: 25px !important;
+    margin-bottom: 35px !important;
+    padding-top: 5px !important;
+    padding-bottom: 5px !important;
+}

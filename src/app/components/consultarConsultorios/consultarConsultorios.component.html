@@ -1,0 +1,26 @@
+<div class="col-lg-12">
+  <div class="panel-heading">
+    <h1 class="h1-strong"> {{title}} </h1>
+  </div>
+  <div class="panel-body">
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>Clave Consultorio</th>
+          <th>Area</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let consultorio of consultorios | async">
+          <td>{{consultorio.numConsultorio}}</td>
+          <td>{{consultorio.area}}</td>
+          <td>
+            <button (click)="borrarConsultorio(consultorio.idConsultorio)" class="btn btn-danger">Elimina</button>
+            <button (click)="actualizarConsultorio(consultorio.idConsultorio)" class="btn btn-warning" style="margin-left: 10px">Actualiza</button>
+            <button class="btn btn-success" style="margin-left: 10px">Detalles</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
